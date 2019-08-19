@@ -29,7 +29,11 @@ shell_exec("cd $backupPath &&  mkdir $createdFolder");
 ###### MySQL back up
 $mysqlBackupPath = $createdFolderPath."/db_dump.sql";
 
-shell_exec("mysqldump -u username -p database_name > $mysqlBackupPath");    
+$database = "test";
+$db_username = "root";
+$db_password = "1234";
+
+shell_exec("mysqldump -u $db_username -p'$db_password' $database > $mysqlBackupPath");    
 
 $applicationFolder = "/var/www/html";   //root folder for application in VPS
 
@@ -38,7 +42,7 @@ $applicationFolder = "/var/www/html";   //root folder for application in VPS
 shell_exec("cd $backupPath && zip -r $createdFolder $applicationFolder $mysqlBackupPath");
 
 ##### upload file to google drive
-$fileName = $createdFolderPath.".zip";
+$fileName = $createdFolderPath.".zip"; // 08-10-19.zip
     
 $fileMetadata = new Google_Service_Drive_DriveFile(array(
     'name' => $fileName,
