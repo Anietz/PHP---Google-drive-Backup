@@ -9,4 +9,6 @@ Steps:
 
 3.  Get database credentials and application folder path
 
-4.  Take a cup of coffee
+4.  Use crontab utility to schedule daily backup of DB and application folder
+
+5.  Take a cup of coffee
