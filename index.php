@@ -17,7 +17,7 @@ $service = new Google_Service_Drive($client);
 
 
 
-$createdFolder = .Date("d-m-y"); //"08-10-19";
+$createdFolder = Date("d-m-y"); //"08-10-19";
 
 
 $backupPath = "/var/scripts/";
