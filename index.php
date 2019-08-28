@@ -29,11 +29,7 @@ shell_exec("cd $backupPath &&  mkdir $createdFolder");
 ###### MySQL back up
 $mysqlBackupPath = $createdFolderPath."/db_dump.sql";
 
-$database = "test";
-$db_username = "root";
-$db_password = "1234";
-
-shell_exec("mysqldump -u $db_username -p'$db_password' $database > $mysqlBackupPath");    
+shell_exec("mysqldump -u root -p'password' mydb > $mysqlBackupPath");    
 
 $applicationFolder = "/var/www/html";   //root folder for application in VPS
 
